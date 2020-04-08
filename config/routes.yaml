@@ -1,3 +1,35 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+
+lists:
+    type: rest
+    resource: App\Controller\List2Controller
+    prefix: api
+
+tasks:
+    type: rest
+    resource: App\Controller\TaskController
+    prefix: api
+
+notes:
+    type: rest
+    resource: App\Controller\NoteController
+    prefix: api
+
+preferences:
+    type: rest
+    resource: App\Controller\PreferenceController
+    prefix: api
+
+api_login_check:
+    path: /api/login_check
+
+gesdinet_jwt_refresh_token:
+    path:       /api/token/refresh
+    controller: gesdinet.jwtrefreshtoken::refresh
+
+app.swagger_ui:
+    path: /api/doc
+    methods: GET
+    defaults: { _controller: nelmio_api_doc.controller.swagger_ui }
